@@ -1,6 +1,14 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-export const Navigation = (props) => {
+export const Navigation = () => {
+  const navigate = useNavigate();
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    navigate("/"); // Redirige a la página principal
+  };
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -17,7 +25,7 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
           </button>
-          <a className="navbar-brand page-scroll" href="#page-top">
+          <a className="navbar-brand page-scroll" href="/" onClick={handleHomeClick}>
             A+PRENDE
           </a>{" "}
         </div>
@@ -34,7 +42,7 @@ export const Navigation = (props) => {
             </li>
             <li>
               <a href="#about" className="page-scroll">
-                About
+                Nosotros
               </a>
             </li>
             <li>
@@ -48,18 +56,13 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href="#testimonials" className="page-scroll">
-                Testimonials
-              </a>
-            </li>
-            <li>
               <a href="#team" className="page-scroll">
-                Team
+                Equipo
               </a>
             </li>
             <li>
               <a href="#contact" className="page-scroll">
-                Contact
+                Contactanos
               </a>
             </li>
           </ul>

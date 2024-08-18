@@ -209,7 +209,7 @@ a:focus,
   width: 100%;
   padding: 0;
   background: url(../img/intro-bg.jpg) center center no-repeat;
-  background-color: #e5e5e5;
+  background-color: #282e51;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -220,12 +220,17 @@ a:focus,
 }
 .intro h1 {
   font-family: "Raleway", sans-serif;
-  color: #fff;
-  font-size: 82px;
+  color: #f9f9fd;
+  font-size: 88px;
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 10px;
+  background: linear-gradient(to right, #2f1fd8, #6db3f5); /* Ajusta los colores del degradado */
+  -webkit-background-clip: text; /* Soporte para WebKit */
+  -webkit-text-fill-color: transparent; /* Soporte para WebKit */
+  background-clip: text; /* Soporte para otros navegadores */
+  color: transparent; /* Asegúrate de que el color del texto sea transparente */
 }
 .intro h1 span {
   font-weight: 800;
@@ -233,7 +238,7 @@ a:focus,
 }
 .intro p {
   color: #fff;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 300;
   line-height: 30px;
   margin: 0 auto;
@@ -310,7 +315,7 @@ header .intro-text {
 /* Services Section */
 #services {
   padding: 100px 0;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: linear-gradient(to right, #6372ff 0%, #3676bb 100%);
   color: #fff;
 }
 #services .service-desc {
