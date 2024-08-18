@@ -2,9 +2,10 @@ import React from "react";
 
 export const ClasesDestacadas = () => {
   return (
-    <div className="text-center">
+    <div style={{ marginTop: '90px' }}> {/* Ajusta según la altura de la navbar */}
       <h1>Clases Destacadas</h1>
-      <p>Aquí encontrarás una lista de clases destacadas y sincronizadas sobre temas de interés general.</p>
+      <p>Contenido de la vista "Clases Destacadas".</p>
     </div>
   );
 };
+

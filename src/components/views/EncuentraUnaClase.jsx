@@ -2,9 +2,11 @@ import React from "react";
 
 export const EncuentraUnaClase = () => {
   return (
-    <div className="text-center">
+    <div style={{ marginTop: '90px' }}> {/* Ajusta según la altura de la navbar */}
       <h1>Encuentra una Clase</h1>
-      <p>Busca la oferta educativa que más se acomode a tus necesidades y empieza a aprender.</p>
+      <p>Contenido de la vista "Encuentra una Clase".</p>
     </div>
   );
 };
+
+
