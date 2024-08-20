@@ -65,28 +65,40 @@
   ],
   "Services": [
     {
-      "icon": "fa fa-wordpress",
-      "name": "Matematicas"
+      "icon": "/img/matematicas.png",
+      "name": "Matematicas",
+      "text": "Texto de matemáticas",
+      "link": "/encuentra-una-clase/matematicas"
     },
     {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Programacion"
+      "icon": "/img/programacion.png",
+      "name": "Programacion",
+      "text": "Texto de programación",
+      "link": "/encuentra-una-clase/programacion"
     },
     {
-      "icon": "fa fa-cloud-download",
-      "name": "Quimica"
+      "icon": "/img/quimica.png",
+      "name": "Quimica",
+      "text": "Texto de química",
+      "link": "/encuentra-una-clase/quimica"
     },
     {
-      "icon": "fa fa-language",
-      "name": "Idiomas"
+      "icon": "/img/idiomas.png",
+      "name": "Idiomas",
+      "text": "Texto de idiomas",
+      "link": "/encuentra-una-clase/idiomas"
     },
     {
-      "icon": "fa fa-plane",
-      "name": "Fisica"
+      "icon": "/img/fisica.png",
+      "name": "Fisica",
+      "text": "Texto de física",
+      "link": "/encuentra-una-clase/fisica"
     },
     {
-      "icon": "fa fa-pie-chart",
-      "name": "Dibujo"
+      "icon": "/img/dibujo.png",
+      "name": "Dibujo",
+      "text": "Texto de dibujo",
+      "link": "/encuentra-una-clase/dibujo"
     }
   ],
   "Team": [
