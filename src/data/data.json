@@ -65,11 +65,11 @@
   ],
   "Services": [
     {
-      "icon": "fa fa-wordpress",
+      "icon": "fa fa-pie-chart",
       "name": "Matematicas"
     },
     {
-      "icon": "fa fa-cart-arrow-down",
+      "icon": "fa fa-cloud-download",
       "name": "Programacion"
     },
     {
