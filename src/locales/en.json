@@ -42,7 +42,15 @@
   "Equipo": "Team",
   "Contactanos": "Contact Us",
   "Clases": "Classes",
-  "topics_frecuentes": "Here are some of the most popular topics from the most frequent classes"
+  "topics_frecuentes": "Here are some of the most popular topics from the most frequent classes",
+  "highlightedClasses": "Highlighted Classes",
+  "content": "Content of the 'Highlighted Classes' view.",
+  "findAClass": "Find a Class",
+  "findAClassContent": "Content of the 'Find a Class' view.",
+  "offerYourServices": "Offer Your Services",
+  "offerYourServicesContent": "Content of the 'Offer Your Services' view.",
+  "support": "Support",
+  "supportContent": "Content of the 'Support' view."
 }
 
   

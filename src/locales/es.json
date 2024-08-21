@@ -42,5 +42,13 @@
   "Equipo": "Equipo",
   "Contactanos": "Contáctanos",
   "Clases": "Clases",
-  "topics_frecuentes": "Estas son algunos de los topics más populares de las clases más frecuentes"
+  "topics_frecuentes": "Estas son algunos de los topics más populares de las clases más frecuentes",
+  "highlightedClasses": "Clases Destacadas",
+  "content": "Contenido de la vista 'Clases Destacadas'.",
+  "findAClass": "Encuentra una Clase",
+  "findAClassContent": "Contenido de la vista 'Encuentra una Clase'.",
+  "offerYourServices": "Ofrece Tus Servicios",
+  "offerYourServicesContent": "Contenido de la vista 'Ofrece Tus Servicios'.",
+  "support": "Soporte",
+  "supportContent": "Contenido de la vista 'Soporte'."
 }
