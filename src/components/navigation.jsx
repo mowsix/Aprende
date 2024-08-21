@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher"; // Importa el componente LanguageSwitcher
 
 export const Navigation = () => {
   const { t } = useTranslation();
@@ -66,6 +67,11 @@ export const Navigation = () => {
               <a href="#contact" className="page-scroll">
                 {t('Contactanos')}
               </a>
+            </li>
+            <li>
+              <div className="language-switcher">
+                <LanguageSwitcher /> {/* Añade el componente LanguageSwitcher aquí */}
+              </div>
             </li>
           </ul>
         </div>
