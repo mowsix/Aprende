@@ -50,5 +50,112 @@
   "offerYourServices": "Ofrece Tus Servicios",
   "offerYourServicesContent": "Contenido de la vista 'Ofrece Tus Servicios'.",
   "support": "Soporte",
-  "supportContent": "Contenido de la vista 'Soporte'."
+  "supportContent": "Contenido de la vista 'Soporte'.",
+  "Header": {
+    "title": "A+PRENDE",
+    "paragraph": "La mejor web para aprender y enseñar"
+  },
+  "About": {
+    "paragraph": "A+prende es una plataforma digital con el objetivo de ayudar a los estudiantes con dificultades, inquietudes o problemas en algunas áreas del conocimiento y a su vez ayudar a las personas con dichos conocimientos a tener un beneficio económico proporcional al esfuerzo de cada lección o trabajo.",
+    "Why": [
+      "Optimización del proceso de aprendizaje",
+      "Oportunidad de reconsultar a tus monitores",
+      "Monetizar tus conocimientos de forma rápida"
+    ],
+    "Why2": [
+      "Aprendizaje Asíncrono",
+      "Precios adecuados para los estudiantes",
+      "Encontrar un monitor con conocimiento específico"
+    ]
+  },
+  "Services": [
+    {
+      "icon": "/img/matematicas.png",
+      "name": "Matemáticas",
+      "text": "Texto de matemáticas",
+      "link": "/encuentra-una-clase/matematicas"
+    },
+    {
+      "icon": "/img/programacion.png",
+      "name": "Programación",
+      "text": "Texto de programación",
+      "link": "/encuentra-una-clase/programacion"
+    },
+    {
+      "icon": "/img/quimica.png",
+      "name": "Química",
+      "text": "Texto de química",
+      "link": "/encuentra-una-clase/quimica"
+    },
+    {
+      "icon": "/img/idiomas.png",
+      "name": "Idiomas",
+      "text": "Texto de idiomas",
+      "link": "/encuentra-una-clase/idiomas"
+    },
+    {
+      "icon": "/img/fisica.png",
+      "name": "Física",
+      "text": "Texto de física",
+      "link": "/encuentra-una-clase/fisica"
+    },
+    {
+      "icon": "/img/dibujo.png",
+      "name": "Dibujo",
+      "text": "Texto de dibujo",
+      "link": "/encuentra-una-clase/dibujo"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "Nati Natasha",
+      "job": "Primer Semestre"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Tyler Duque",
+      "job": "No se quién es"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Hernan Achito",
+      "job": "CEO"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Jimbo",
+      "job": "Se busca"
+    }
+  ],
+  "Contact": {
+    "address": "4321 California St, San Francisco, CA 12345",
+    "phone": "+1 123 456 1234",
+    "email": "info@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-magic",
+      "title": "Clases Destacadas",
+      "text": "Las clases más populares en la plataforma, se actualizan semanalmente"
+    },
+    {
+      "icon": "fa fa-bullhorn",
+      "title": "Ofrece un Servicio",
+      "text": "¿Tienes conocimientos? Ofrece tus servicios a cambio de una remuneración que consideres apropiada. Un estudiante está esperando por ti"
+    },
+    {
+      "icon": "fa fa-group",
+      "title": "Encuentra una Clase",
+      "text": "¿Quieres aprender algo nuevo o tienes dificultades? Busca una oferta que se adapte a tus necesidades. Un tutor está esperando por ti"
+    },
+    {
+      "icon": "fa fa-comments-o",
+      "title": "Soporte",
+      "text": "Si tienes problemas, no dudes en contactarnos"
+    }
+  ]
 }

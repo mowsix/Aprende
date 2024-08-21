@@ -50,7 +50,112 @@
   "offerYourServices": "Offer Your Services",
   "offerYourServicesContent": "Content of the 'Offer Your Services' view.",
   "support": "Support",
-  "supportContent": "Content of the 'Support' view."
+  "supportContent": "Content of the 'Support' view.",
+  "Header": {
+    "title": "A+PRENDE",
+    "paragraph": "The best web for learning and teaching"
+  },
+  "About": {
+    "paragraph": "A+prende is a digital platform aimed at helping students with difficulties, concerns, or problems in certain areas of knowledge, and at the same time, helping people with this knowledge to gain economic benefits proportional to the effort of each lesson or task.",
+    "Why": [
+      "Optimization of the learning process",
+      "Opportunity to consult with your mentors again",
+      "Monetize your knowledge quickly"
+    ],
+    "Why2": [
+      "Asynchronous learning",
+      "Affordable prices for students",
+      "Find a mentor with specific knowledge"
+    ]
+  },
+  "Services": [
+    {
+      "icon": "/img/matematicas.png",
+      "name": "Mathematics",
+      "text": "Mathematics text",
+      "link": "/find-a-class/mathematics"
+    },
+    {
+      "icon": "/img/programacion.png",
+      "name": "Programming",
+      "text": "Programming text",
+      "link": "/find-a-class/programming"
+    },
+    {
+      "icon": "/img/quimica.png",
+      "name": "Chemistry",
+      "text": "Chemistry text",
+      "link": "/find-a-class/chemistry"
+    },
+    {
+      "icon": "/img/idiomas.png",
+      "name": "Languages",
+      "text": "Languages text",
+      "link": "/find-a-class/languages"
+    },
+    {
+      "icon": "/img/fisica.png",
+      "name": "Physics",
+      "text": "Physics text",
+      "link": "/find-a-class/physics"
+    },
+    {
+      "icon": "/img/dibujo.png",
+      "name": "Drawing",
+      "text": "Drawing text",
+      "link": "/find-a-class/drawing"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "Nati Natasha",
+      "job": "First Semester"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Tyler Duque",
+      "job": "Unknown"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Hernan Achito",
+      "job": "CEO"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Jimbo",
+      "job": "Searching"
+    }
+  ],
+  "Contact": {
+    "address": "4321 California St, San Francisco, CA 12345",
+    "phone": "+1 123 456 1234",
+    "email": "info@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-magic",
+      "title": "Highlighted Classes",
+      "text": "The most popular classes on the platform, updated weekly"
+    },
+    {
+      "icon": "fa fa-bullhorn",
+      "title": "Offer a Service",
+      "text": "Have some knowledge? Offer your services in exchange for a fee you consider appropriate. A student is waiting for you"
+    },
+    {
+      "icon": "fa fa-group",
+      "title": "Find a Class",
+      "text": "Want to learn something new or have difficulties? Find an offer that suits your needs. A tutor is waiting for you"
+    },
+    {
+      "icon": "fa fa-comments-o",
+      "title": "Support",
+      "text": "If you have issues, do not hesitate to contact us"
+    }
+  ]
 }
-
-  

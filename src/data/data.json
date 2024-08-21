@@ -1,64 +1,64 @@
 {
   "Header": {
-    "title": "A+PRENDE",
-    "paragraph": "La mejor web para aprender y enseñar"
+    "title": "header.title",
+    "paragraph": "header.paragraph"
   },
   "About": {
-    "paragraph": "A+prende es una plataforma digital con el obetivo de ayudar a los estudiantes con dificultades, inquietudes o problemas en algunas areas del conocimiento y a su vez ayudar a las personas con dichos conocimientos a tener un beneficio economico proporcional al esfuerzo de cada leccion o trabajo.",
+    "paragraph": "about.paragraph",
     "Why": [
-      "Optimizacion del proceso de aprendizaje",
-      "Oportunidad de reconsultar a tus monitores",
-      "Monetizar tus conocimientos de forma rapida"
+      "about.why1",
+      "about.why2",
+      "about.why3"
     ],
     "Why2": [
-      "Aprendizaje Asincrono",
-      "Precios adecuados para los estudiantes",
-      "Encontrar un monitor con conocimiento especifico"
+      "about.why2_1",
+      "about.why2_2",
+      "about.why2_3"
     ]
   },
   "Gallery": [
     {
-      "title": "Project Title",
+      "title": "gallery.projectTitle",
       "largeImage": "img/portfolio/01-large.jpg",
       "smallImage": "img/portfolio/01-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "gallery.projectTitle",
       "largeImage": "img/portfolio/02-large.jpg",
       "smallImage": "img/portfolio/02-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "gallery.projectTitle",
       "largeImage": "img/portfolio/03-large.jpg",
       "smallImage": "img/portfolio/03-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "gallery.projectTitle",
       "largeImage": "img/portfolio/04-large.jpg",
       "smallImage": "img/portfolio/04-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "gallery.projectTitle",
       "largeImage": "img/portfolio/05-large.jpg",
       "smallImage": "img/portfolio/05-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "gallery.projectTitle",
       "largeImage": "img/portfolio/06-large.jpg",
       "smallImage": "img/portfolio/06-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "gallery.projectTitle",
       "largeImage": "img/portfolio/07-large.jpg",
       "smallImage": "img/portfolio/07-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "gallery.projectTitle",
       "largeImage": "img/portfolio/08-large.jpg",
       "smallImage": "img/portfolio/08-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "gallery.projectTitle",
       "largeImage": "img/portfolio/09-large.jpg",
       "smallImage": "img/portfolio/09-small.jpg"
     }
@@ -66,91 +66,91 @@
   "Services": [
     {
       "icon": "/img/matematicas.png",
-      "name": "Matematicas",
-      "text": "Texto de matemáticas",
+      "name": "services.mathematics",
+      "text": "services.mathematicsText",
       "link": "/encuentra-una-clase/matematicas"
     },
     {
       "icon": "/img/programacion.png",
-      "name": "Programacion",
-      "text": "Texto de programación",
+      "name": "services.programming",
+      "text": "services.programmingText",
       "link": "/encuentra-una-clase/programacion"
     },
     {
       "icon": "/img/quimica.png",
-      "name": "Quimica",
-      "text": "Texto de química",
+      "name": "services.chemistry",
+      "text": "services.chemistryText",
       "link": "/encuentra-una-clase/quimica"
     },
     {
       "icon": "/img/idiomas.png",
-      "name": "Idiomas",
-      "text": "Texto de idiomas",
+      "name": "services.languages",
+      "text": "services.languagesText",
       "link": "/encuentra-una-clase/idiomas"
     },
     {
       "icon": "/img/fisica.png",
-      "name": "Fisica",
-      "text": "Texto de física",
+      "name": "services.physics",
+      "text": "services.physicsText",
       "link": "/encuentra-una-clase/fisica"
     },
     {
       "icon": "/img/dibujo.png",
-      "name": "Dibujo",
-      "text": "Texto de dibujo",
+      "name": "services.drawing",
+      "text": "services.drawingText",
       "link": "/encuentra-una-clase/dibujo"
     }
   ],
   "Team": [
     {
       "img": "img/team/01.jpg",
-      "name": "Nati natasha",
-      "job": "primer semestre"
+      "name": "team.natiNatasha",
+      "job": "team.firstSemester"
     },
     {
       "img": "img/team/02.jpg",
-      "name": "Tyler Duque",
-      "job": "No se quien es"
+      "name": "team.tylerDuque",
+      "job": "team.unknown"
     },
     {
       "img": "img/team/03.jpg",
-      "name": "Hernan Achito",
-      "job": "Ceo"
+      "name": "team.hernanAchito",
+      "job": "team.ceo"
     },
     {
       "img": "img/team/04.jpg",
-      "name": "Jimbo",
-      "job": "se busca"
+      "name": "team.jimbo",
+      "job": "team.searching"
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
-    "facebook": "fb.com",
-    "twitter": "twitter.com",
-    "youtube": "youtube.com"
+    "address": "contact.address",
+    "phone": "contact.phone",
+    "email": "contact.email",
+    "facebook": "contact.facebook",
+    "twitter": "contact.twitter",
+    "youtube": "contact.youtube"
   },
   "Features": [
     {
       "icon": "fa fa-magic",
-      "title": "Clases Destacadas",
-      "text": "La Clases mas populares en la plataforma, cada semana se actualizara el topic"
+      "title": "features.highlightedClassesTitle",
+      "text": "features.highlightedClassesText"
     },
     {
       "icon": "fa fa-bullhorn",
-      "title": "Ofrece un Servicio",
-      "text": "Tienes algun conocimiento, ofrece tus servicios a cambio de la remuneracion que consideres apropiada, un estudiante esta esperando por ti"
+      "title": "features.offerServiceTitle",
+      "text": "features.offerServiceText"
     },
     {
       "icon": "fa fa-group",
-      "title": "Encuentra una Clase",
-      "text": "Quieres aprender algo nuevo o tienes dificultades, busca una oferta que se adapte a tus necesidades, un monitor esta esperando por ti"
+      "title": "features.findClassTitle",
+      "text": "features.findClassText"
     },
     {
       "icon": "fa fa-comments-o",
-      "title": "Soporte",
-      "text": "Si tienes problemas, no dudes en contactarnos"
+      "title": "features.supportTitle",
+      "text": "features.supportText"
     }
   ]
 }
