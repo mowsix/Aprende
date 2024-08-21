@@ -11,11 +11,13 @@ import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
+import './i18n'; // Importa la configuración de i18n
 
 import { ClasesDestacadas } from "./components/views/ClasesDestacadas";
 import { OfreceTusServicios } from "./components/views/OfreceTusServicios";
 import { EncuentraUnaClase } from "./components/views/EncuentraUnaClase";
 import { Soporte } from "./components/views/Soporte";
+import LanguageSwitcher from "./components/LanguageSwitcher"; // Importa el componente para cambiar el idioma
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -30,6 +32,7 @@ const App = () => {
 
   return (
     <Router>
+      <LanguageSwitcher /> {/* Botón para cambiar el idioma */}
       <Navigation />
       <Routes>
         <Route path="/" element={
