@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const About = (props) => {
+  const { t } = useTranslation();
+
   return (
     <div id="about">
       <div className="container">
@@ -11,26 +14,26 @@ export const About = (props) => {
           </div>
           <div className="col-xs-12 col-md-6">
             <div className="about-text">
-              <h2>Nosotros</h2>
-              <p>{props.data ? props.data.paragraph : "loading..."}</p>
-              <h3>¿Por que usar A+prende?</h3>
+              <h2>{t('about_title')}</h2> {/* Título traducido */}
+              <p>{props.data ? props.data.paragraph : t('loading')}</p> {/* Parágrafo dinámico */}
+              <h3>{t('why_title')}</h3> {/* Título "¿Por qué usar A+prende?" traducido */}
               <div className="list-style">
                 <div className="col-lg-6 col-sm-6 col-xs-12">
                   <ul>
                     {props.data
                       ? props.data.Why.map((d, i) => (
-                          <li key={`${d}-${i}`}>{d}</li>
+                          <li key={`${d}-${i}`}>{d}</li> // Listas dinámicas
                         ))
-                      : "loading"}
+                      : t('loading')}
                   </ul>
                 </div>
                 <div className="col-lg-6 col-sm-6 col-xs-12">
                   <ul>
                     {props.data
                       ? props.data.Why2.map((d, i) => (
-                          <li key={`${d}-${i}`}> {d}</li>
+                          <li key={`${d}-${i}`}> {d}</li> // Listas dinámicas
                         ))
-                      : "loading"}
+                      : t('loading')}
                   </ul>
                 </div>
               </div>

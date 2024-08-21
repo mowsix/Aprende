@@ -1,28 +1,29 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const initialState = {
   name: "",
   email: "",
   message: "",
 };
+
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
+  const { t } = useTranslation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
+
   const clearState = () => setState({ ...initialState });
-  
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, email, message);
-    
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
-    
+
     emailjs
       .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
       .then(
@@ -35,6 +36,7 @@ export const Contact = (props) => {
         }
       );
   };
+
   return (
     <div>
       <div id="contact">
@@ -42,9 +44,9 @@ export const Contact = (props) => {
           <div className="col-md-8">
             <div className="row">
               <div className="section-title">
-                <h2>Contactanos</h2>
+                <h2>{t('contact_title')}</h2> {/* Título traducido */}
                 <p>
-                  Por favor escribenos si quieres colaborar con el proyecto, dejar una sugerencia o cualquier otra cosa con tu correo aqui debajo
+                  {t('contact_description')}
                 </p>
               </div>
               <form name="sentMessage" validate onSubmit={handleSubmit}>
@@ -56,7 +58,7 @@ export const Contact = (props) => {
                         id="name"
                         name="name"
                         className="form-control"
-                        placeholder="Name"
+                        placeholder={t('contact_name')}
                         required
                         onChange={handleChange}
                       />
@@ -70,7 +72,7 @@ export const Contact = (props) => {
                         id="email"
                         name="email"
                         className="form-control"
-                        placeholder="Email"
+                        placeholder={t('contact_email')}
                         required
                         onChange={handleChange}
                       />
@@ -84,7 +86,7 @@ export const Contact = (props) => {
                     id="message"
                     className="form-control"
                     rows="4"
-                    placeholder="Message"
+                    placeholder={t('contact_message')}
                     required
                     onChange={handleChange}
                   ></textarea>
@@ -92,35 +94,35 @@ export const Contact = (props) => {
                 </div>
                 <div id="success"></div>
                 <button type="submit" className="btn btn-custom btn-lg">
-                  Enviar Mensaje
+                  {t('contact_send')}
                 </button>
               </form>
             </div>
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
-              <h3>Info de Contacto</h3>
+              <h3>{t('contact_info')}</h3>
               <p>
                 <span>
-                  <i className="fa fa-map-marker"></i> Address
+                  <i className="fa fa-map-marker"></i> {t('contact_address')}
                 </span>
-                {props.data ? props.data.address : "loading"}
+                {props.data ? props.data.address : t('loading')}
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-phone"></i> Phone
+                  <i className="fa fa-phone"></i> {t('contact_phone')}
                 </span>{" "}
-                {props.data ? props.data.phone : "loading"}
+                {props.data ? props.data.phone : t('loading')}
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-envelope-o"></i> Email
+                  <i className="fa fa-envelope-o"></i> {t('contact_email_label')}
                 </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                {props.data ? props.data.email : t('loading')}
               </p>
             </div>
           </div>
@@ -152,7 +154,7 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2024 React Land Page. Design by{" "}
+            &copy; 2024 {t('footer_text')}. {t('design_by')}{" "}
             <a href="http://www.santixgallego" rel="nofollow">
               Santixgallego
             </a>

@@ -1,13 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Team = (props) => {
+  const { t } = useTranslation(); // Obtén la función t para traducir
+
   return (
     <div id="team" className="text-center">
       <div className="container">
         <div className="col-md-8 col-md-offset-2 section-title">
-          <h2>Conoce al equipo </h2>
+          <h2>{t('team_title')}</h2> {/* Traduce el título */}
           <p>
-            Una panda de mileuristas y mow que hizo todo
+            {t('team_description')} {/* Traduce la descripción */}
           </p>
         </div>
         <div id="row">
