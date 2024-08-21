@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Navigation = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleHomeClick = (e) => {
@@ -20,7 +22,7 @@ export const Navigation = () => {
             data-target="#bs-example-navbar-collapse-1"
           >
             {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
+            <span className="sr-only">{t('Toggle navigation')}</span>{" "}
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
@@ -37,32 +39,32 @@ export const Navigation = () => {
           <ul className="nav navbar-nav navbar-right">
             <li>
               <a href="#features" className="page-scroll">
-                SERVICIOS
+                {t('SERVICIOS')}
               </a>
             </li>
             <li>
               <a href="#about" className="page-scroll">
-                Nosotros
+                {t('Nosotros')}
               </a>
             </li>
             <li>
               <a href="#services" className="page-scroll">
-                CLASES
+                {t('CLASES')}
               </a>
             </li>
             <li>
               <a href="#portfolio" className="page-scroll">
-                Gallery
+                {t('Gallery')}
               </a>
             </li>
             <li>
               <a href="#team" className="page-scroll">
-                Equipo
+                {t('Equipo')}
               </a>
             </li>
             <li>
               <a href="#contact" className="page-scroll">
-                Contactanos
+                {t('Contactanos')}
               </a>
             </li>
           </ul>

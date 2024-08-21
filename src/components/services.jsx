@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Services = (props) => {
+  const { t } = useTranslation();
+
   return (
     <div id="services" className="text-center">
       <div className="container">
         <div className="section-title">
-          <h2>Clases</h2>
-          <p>
-            Estas son algunos de los topics más populares de las clases más frecuentes
-          </p>
+          <h2>{t('Clases')}</h2>
+          <p>{t('topics_frecuentes')}</p>
         </div>
         <div className="row">
           {props.data
@@ -19,7 +20,7 @@ export const Services = (props) => {
                 <Link to={d.link}>
                   <img
                     src={d.icon}
-                    alt={d.name}
+                    alt={t(d.name)}
                     style={{
                       width: "120px",
                       height: "120px",
@@ -33,12 +34,12 @@ export const Services = (props) => {
                   />
                 </Link>
                 <div className="service-desc">
-                  <h3>{d.name}</h3>
-                  <p>{d.text}</p>
+                  <h3>{t(d.name)}</h3>
+                  <p>{t(d.text)}</p>
                 </div>
               </div>
             ))
-            : "loading"}
+            : t('loading')}
         </div>
       </div>
     </div>

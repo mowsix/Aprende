@@ -1,15 +1,17 @@
 import { Image } from "./image";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Gallery = (props) => {
+  const { t } = useTranslation();
+
   return (
     <div id="portfolio" className="text-center">
       <div className="container">
         <div className="section-title">
-          <h2>Gallery</h2>
+          <h2>{t('gallery_title')}</h2> {/* Título traducido */}
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+            {t('gallery_description')} {/* Descripción traducida */}
           </p>
         </div>
         <div className="row">
@@ -21,13 +23,13 @@ export const Gallery = (props) => {
                     className="col-sm-6 col-md-4 col-lg-4"
                   >
                     <Image
-                      title={d.title}
+                      title={t(d.title)}
                       largeImage={d.largeImage}
                       smallImage={d.smallImage}
                     />
                   </div>
                 ))
-              : "Loading..."}
+              : t('loading')}
           </div>
         </div>
       </div>
