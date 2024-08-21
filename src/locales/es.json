@@ -1,5 +1,19 @@
 {
-    "welcome_message": "¡Bienvenido a nuestro sitio web!",
-    "description": "Esta es una plantilla de página de inicio de React."
-  }
-  
+  "team_title": "Conoce al equipo",
+  "team_description": "Una panda de mileuristas y mow que hizo todo",
+  "about_title": "Nosotros",
+  "why_title": "¿Por qué usar A+prende?",
+  "loading": "cargando...",
+  "contact_title": "Contáctanos",
+  "contact_description": "Por favor escríbenos si quieres colaborar con el proyecto, dejar una sugerencia o cualquier otra cosa con tu correo aquí debajo",
+  "contact_name": "Nombre",
+  "contact_email": "Correo Electrónico",
+  "contact_message": "Mensaje",
+  "contact_send": "Enviar Mensaje",
+  "contact_info": "Info de Contacto",
+  "contact_address": "Dirección",
+  "contact_phone": "Teléfono",
+  "contact_email_label": "Correo Electrónico",
+  "footer_text": "React Landing Page",
+  "design_by": "Diseñado por"
+}

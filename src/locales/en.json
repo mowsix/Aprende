@@ -1,5 +1,21 @@
 {
-    "welcome_message": "Welcome to our website!",
-    "description": "This is a React landing page template."
-  }
+  "team_title": "Meet the Team",
+  "team_description": "A bunch of hard workers and mow who did it all",
+  "about_title": "About Us",
+  "why_title": "Why use A+prende?",
+  "loading": "loading...",
+  "contact_title": "Contact Us",
+  "contact_description": "Please write to us if you want to collaborate with the project, leave a suggestion, or anything else using your email below",
+  "contact_name": "Name",
+  "contact_email": "Email",
+  "contact_message": "Message",
+  "contact_send": "Send Message",
+  "contact_info": "Contact Info",
+  "contact_address": "Address",
+  "contact_phone": "Phone",
+  "contact_email_label": "Email",
+  "footer_text": "React Landing Page",
+  "design_by": "Designed by"
+}
+
   
