@@ -17,6 +17,20 @@ import { OfreceTusServicios } from "./components/views/OfreceTusServicios";
 import { EncuentraUnaClase } from "./components/views/EncuentraUnaClase";
 import { Soporte } from "./components/views/Soporte";
 
+// Función para manejar el comportamiento del menú de Google Translate
+function handleTranslateDropdown() {
+  const googleTranslateElement = document.querySelector("#google_translate_element");
+
+  if (googleTranslateElement) {
+    googleTranslateElement.addEventListener('click', function () {
+      const scrollPosition = window.scrollY;
+      setTimeout(() => {
+        window.scrollTo(0, scrollPosition); // Evitar que la página se desplace hacia arriba
+      }, 0);
+    });
+  }
+}
+
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
@@ -24,8 +38,12 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
+
   useEffect(() => {
     setLandingPageData(JsonData);
+    
+    // Ejecuta la función cuando el componente se monta
+    handleTranslateDropdown();
   }, []);
 
   return (

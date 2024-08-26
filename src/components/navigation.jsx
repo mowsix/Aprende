@@ -65,6 +65,10 @@ export const Navigation = () => {
                 Contactanos
               </a>
             </li>
+            <li>
+              {/* Contenedor del widget de Google Translate */}
+              <div id="google_translate_element"></div>
+            </li>
           </ul>
         </div>
       </div>

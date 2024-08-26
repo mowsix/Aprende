@@ -1,5 +1,6 @@
 <head>
   <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
@@ -43,9 +44,39 @@
   <meta name="description" content="" />
   <meta name="author" content="@Issaafalkattan" />
 </head>
+<!-- Agrega esto al archivo public/index.html, justo antes de la etiqueta </body> -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+  function preventScrollOnTranslate() {
+    const googleFrame = document.querySelector('iframe.goog-te-banner-frame');
+
+    if (googleFrame) {
+      googleFrame.contentWindow.document.body.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+
+    document.querySelector('.goog-te-combo').addEventListener('focus', (e) => {
+      e.preventDefault();
+      window.scrollTo(0, 0); // Mantiene la página en la posición actual
+    });
+  }
+
+  setInterval(preventScrollOnTranslate, 1000);
+</script>
+
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
   <div id="root"></div>
   <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
+
