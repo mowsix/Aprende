@@ -658,3 +658,74 @@ label {
     margin: 50px 0;
   }
 }
+
+/* EncuentraUnaClase styles */
+/* Asegura que el contenedor principal de la vista tenga un margen superior adecuado */
+.encuentra-clase-container {
+  margin-top: 100px; /* Ajusta según la altura de tu navbar */
+  padding: 20px;
+
+  
+
+}
+
+/* Estilo para los filtros y búsqueda */
+.search-filter-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #6372ff;
+  border-radius: 5px;
+}
+
+.filter-select {
+  width: 25%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #6372ff;
+  border-radius: 5px;
+}
+
+/* Estilo para las tarjetas de clases */
+/* Estilo para las tarjetas de clases */
+.class-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.class-card {
+  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white; /* Texto en blanco para contraste */
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.class-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.class-card h3 {
+  margin: 0;
+  color: white; /* Texto blanco */
+  font-size: 18px;
+}
+
+.class-card p {
+  color: white; /* Texto blanco */
+  font-size: 14px;
+}
+

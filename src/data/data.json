@@ -152,5 +152,14 @@
       "title": "Soporte",
       "text": "Si tienes problemas, no dudes en contactarnos"
     }
+  ],
+  "Classes": [
+    { "name": "Álgebra Básica", "category": "Matematicas" },
+    { "name": "Introducción a la Programación", "category": "Programacion" },
+    { "name": "Química Orgánica", "category": "Quimica" },
+    { "name": "Física Cuántica", "category": "Fisica" },
+    { "name": "Inglés Intermedio", "category": "Idiomas" },
+    { "name": "Dibujo Técnico", "category": "Dibujo" }
   ]
 }
+

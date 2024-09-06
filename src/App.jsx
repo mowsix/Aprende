@@ -63,11 +63,12 @@ const App = () => {
         } />
         <Route path="/clases-destacadas" element={<ClasesDestacadas />} />
         <Route path="/ofrece-tus-servicios" element={<OfreceTusServicios />} />
-        <Route path="/encuentra-una-clase" element={<EncuentraUnaClase />} />
+        <Route path="/encuentra-una-clase" element={<EncuentraUnaClase data={landingPageData.Classes} />} />
         <Route path="/soporte" element={<Soporte />} />
       </Routes>
     </Router>
   );
 };
+
 
 export default App;
