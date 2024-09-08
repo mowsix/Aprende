@@ -19,51 +19,39 @@ export const Navigation = () => {
             data-toggle="collapse"
             data-target="#bs-example-navbar-collapse-1"
           >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
           </button>
           <a className="navbar-brand page-scroll" href="/" onClick={handleHomeClick}>
             A+PRENDE
-          </a>{" "}
+          </a>
         </div>
 
-        <div
-          className="collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1"
-        >
+        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a href="#features" className="page-scroll">
-                SERVICIOS
-              </a>
+              <a href="#features" className="page-scroll">SERVICIOS</a>
             </li>
             <li>
-              <a href="#about" className="page-scroll">
-                Nosotros
-              </a>
+              <a href="#about" className="page-scroll">Nosotros</a>
             </li>
             <li>
-              <a href="#services" className="page-scroll">
-                CLASES
-              </a>
+              <a href="#services" className="page-scroll">CLASES</a>
             </li>
             <li>
-              <a href="#portfolio" className="page-scroll">
-                Gallery
-              </a>
+              <a href="#portfolio" className="page-scroll">Gallery</a>
             </li>
             <li>
-              <a href="#team" className="page-scroll">
-                Equipo
-              </a>
+              <a href="#team" className="page-scroll">Equipo</a>
             </li>
             <li>
-              <a href="#contact" className="page-scroll">
-                Contactanos
-              </a>
+              <a href="#contact" className="page-scroll">Contactanos</a>
+            </li>
+            <li>
+              {/* Botón de login */}
+              <Link to="/login" className="btn btn-primary">Login</Link>
             </li>
             <li>
               {/* Contenedor del widget de Google Translate */}
