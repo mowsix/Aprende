@@ -41,9 +41,6 @@ export const Navigation = () => {
               <a href="#services" className="page-scroll">CLASES</a>
             </li>
             <li>
-              <a href="#portfolio" className="page-scroll">Gallery</a>
-            </li>
-            <li>
               <a href="#team" className="page-scroll">Equipo</a>
             </li>
             <li>
