@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Navigation = () => {
   const navigate = useNavigate();
@@ -47,8 +47,9 @@ export const Navigation = () => {
               <a href="#contact" className="page-scroll">Contactanos</a>
             </li>
             <li>
-              {/* Botón de login */}
-              <Link to="/login" className="btn btn-primary">Login</Link>
+              <a id="login-button" href="/login" className="page-scroll">
+                LOGIN
+              </a>
             </li>
             <li>
               {/* Contenedor del widget de Google Translate */}

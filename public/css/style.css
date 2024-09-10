@@ -847,3 +847,28 @@ body {
   margin-left: 10px;
 }
 
+/* Estilo del botón de login en el navbar */
+.navbar-nav > li > a {
+  color: #333;
+  padding: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-nav > li > a:hover {
+  color: #4285f4;
+}
+
+.navbar-nav > li > a#login-button {
+  color: #333; /* Mismo color que los otros enlaces */
+  background-color: transparent; /* Eliminar color de fondo */
+  border: none; /* Sin bordes */
+  padding: 15px; /* Igualar el padding */
+  font-weight: bold; /* Consistente con los otros enlaces */
+  cursor: pointer;
+}
+
+.navbar-nav > li > a#login-button:hover {
+  color: #4285f4; /* Mismo efecto hover que los demás enlaces */
+  background-color: transparent; /* Sin fondo en hover */
+}
