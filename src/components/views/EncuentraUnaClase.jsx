@@ -4,6 +4,9 @@ export const EncuentraUnaClase = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("Todas");
 
+  console.log("Clases recibidas en EncuentraUnaClase:", props.data); // Verifica si las clases se pasan correctamente
+
+
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -16,7 +19,7 @@ export const EncuentraUnaClase = (props) => {
     .filter((clase) => {
       return (
         (filterCategory === "Todas" || clase.category === filterCategory) &&
-        clase.name.toLowerCase().includes(searchTerm.toLowerCase())
+        clase.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     });
 
@@ -33,12 +36,12 @@ export const EncuentraUnaClase = (props) => {
         />
         <select value={filterCategory} onChange={handleFilterChange} className="filter-select">
           <option value="Todas">Todas</option>
-          <option value="Matematicas">Matemáticas</option>
-          <option value="Programacion">Programación</option>
-          <option value="Quimica">Química</option>
-          <option value="Fisica">Física</option>
-          <option value="Idiomas">Idiomas</option>
-          <option value="Dibujo">Dibujo</option>
+          <option value="matematicas">Matemáticas</option>
+          <option value="programacion">Programación</option>
+          <option value="quimica">Química</option>
+          <option value="fisica">Física</option>
+          <option value="idiomas">Idiomas</option>
+          <option value="dibujo">Dibujo</option>
         </select>
       </div>
 
@@ -46,8 +49,9 @@ export const EncuentraUnaClase = (props) => {
         {filteredClasses.length > 0 ? (
           filteredClasses.map((clase, index) => (
             <div key={index} className="class-card">
-              <h3>{clase.name}</h3>
+              <h3>{clase.title}</h3>
               <p>Categoría: {clase.category}</p>
+              <p>Precio: {clase.price}</p>
             </div>
           ))
         ) : (

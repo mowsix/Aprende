@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-export const CreateClass = () => {
+export const CreateClass = ({ addClass }) => {
+  
   const [formData, setFormData] = useState({
     category: '',
     title: '',
@@ -17,27 +18,17 @@ export const CreateClass = () => {
     });
   };
 
-  // Enviar el formulario al backend
-  const submitForm = async (classData) => {
-    try {
-      const response = await fetch('http://localhost:5000/api/clases', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(classData),
-      });
-      const result = await response.json();
-      console.log(result);
-    } catch (error) {
-      console.error("Error creando la clase:", error);
-    }
-  };
-
   // Manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitForm(formData); // Enviar los datos del formulario al backend
+    console.log("Clase enviada:", formData); // Mostrar datos en la consola
+    addClass(formData);  // Añadir la nueva clase al estado global
+    setFormData({
+      category: '',
+      title: '',
+      price: '',
+      description: ''
+    });
   };
 
   return (
