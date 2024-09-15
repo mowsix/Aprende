@@ -847,3 +847,109 @@ body {
   margin-left: 10px;
 }
 
+/* Estilo del botón de login en el navbar */
+.navbar-nav > li > a {
+  color: #333;
+  padding: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-nav > li > a:hover {
+  color: #4285f4;
+}
+
+.navbar-nav > li > a#login-button {
+  color: #333; /* Mismo color que los otros enlaces */
+  background-color: transparent; /* Eliminar color de fondo */
+  border: none; /* Sin bordes */
+  padding: 15px; /* Igualar el padding */
+  font-weight: bold; /* Consistente con los otros enlaces */
+  cursor: pointer;
+}
+
+.navbar-nav > li > a#login-button:hover {
+  color: #4285f4; /* Mismo efecto hover que los demás enlaces */
+  background-color: transparent; /* Sin fondo en hover */
+}
+
+/*Centrar navbar en pags diferentes al main*/
+.center-navbar-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.center-navbar .navbar-header {
+  margin: 0 auto;
+  float: none;
+}
+
+.center-navbar .navbar-brand {
+  display: block;
+  text-align: center;
+}
+
+
+
+/*Cerear una claseeeeeee*/
+.create-class-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.create-class-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.create-class-form .form-group {
+  margin-bottom: 15px;
+}
+
+.create-class-form .form-group label {
+  display: block;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.create-class-form .form-group input,
+.create-class-form .form-group select,
+.create-class-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.create-class-form .form-group input:focus,
+.create-class-form .form-group select:focus,
+.create-class-form .form-group textarea:focus {
+  outline: none;
+  border-color: #4285f4;
+}
+
+.create-class-form .btn-submit {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-class-form .btn-submit:hover {
+  background-color: #357ae8;
+}

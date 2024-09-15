@@ -1,18 +1,25 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Navigation = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleHomeClick = (e) => {
     e.preventDefault();
     navigate("/"); // Redirige a la página principal
   };
 
+  // Verifica si la ruta actual no es la principal
+  const isMainPage = location.pathname === "/";
+
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
+    <nav
+      id="menu"
+      className={`navbar navbar-default navbar-fixed-top ${!isMainPage ? "center-navbar" : ""}`}
+    >
       <div className="container">
-        <div className="navbar-header">
+        <div className={`navbar-header ${!isMainPage ? "center-navbar-header" : ""}`}>
           <button
             type="button"
             className="navbar-toggle collapsed"
@@ -29,36 +36,45 @@ export const Navigation = () => {
           </a>
         </div>
 
-        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul className="nav navbar-nav navbar-right">
-            <li>
-              <a href="#features" className="page-scroll">SERVICIOS</a>
-            </li>
-            <li>
-              <a href="#about" className="page-scroll">Nosotros</a>
-            </li>
-            <li>
-              <a href="#services" className="page-scroll">CLASES</a>
-            </li>
-            <li>
-              <a href="#portfolio" className="page-scroll">Gallery</a>
-            </li>
-            <li>
-              <a href="#team" className="page-scroll">Equipo</a>
-            </li>
-            <li>
-              <a href="#contact" className="page-scroll">Contactanos</a>
-            </li>
-            <li>
-              {/* Botón de login */}
-              <Link to="/login" className="btn btn-primary">Login</Link>
-            </li>
-            <li>
-              {/* Contenedor del widget de Google Translate */}
-              <div id="google_translate_element"></div>
-            </li>
-          </ul>
-        </div>
+        {isMainPage && (
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul className="nav navbar-nav navbar-right">
+              <li>
+                <a href="#features" className="page-scroll">
+                  SERVICIOS
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="page-scroll">
+                  Nosotros
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="page-scroll">
+                  CLASES
+                </a>
+              </li>
+              <li>
+                <a href="#team" className="page-scroll">
+                  Equipo
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="page-scroll">
+                  Contactanos
+                </a>
+              </li>
+              <li>
+                <a id="login-button" href="/login" className="page-scroll">
+                  LOGIN
+                </a>
+              </li>
+              <li>
+                <div id="google_translate_element"></div>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );
