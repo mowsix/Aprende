@@ -93,7 +93,8 @@
     {
       "icon": "fa fa-bullhorn",
       "title": "Ofrece un Servicio",
-      "text": "Tienes algun conocimiento, ofrece tus servicios a cambio de la remuneracion que consideres apropiada, un estudiante esta esperando por ti"
+      "text": "Tienes algun conocimiento, ofrece tus servicios a cambio de la remuneracion que consideres apropiada, un estudiante esta esperando por ti",
+      "link": "/crear-clase"
     },
     {
       "icon": "fa fa-group",

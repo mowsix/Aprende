@@ -8,6 +8,7 @@ export const EncuentraUnaClase = (props) => {
 
 
   const handleSearch = (e) => {
+    console.log(e)
     setSearchTerm(e.target.value);
   };
 
