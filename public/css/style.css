@@ -920,7 +920,7 @@ body {
 }
 
 .create-class-form .form-group input,
-.create-class-form .form-group select,
+.create-class-form ,
 .create-class-form .form-group textarea {
   width: 100%;
   padding: 10px;
@@ -928,6 +928,12 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   transition: border-color 0.3s ease;
+}
+.form-group select {
+  width: 100%;
+  max-width: 280%; /* Asegúrate de que no se exceda */
+  padding: 2px;
+  font-size: 14px;
 }
 
 .create-class-form .form-group input:focus,

@@ -53,7 +53,7 @@ const App = () => {
           </>
         } />
         <Route path="/login" element={<Login />} />
-        <Route path="/clases-destacadas" element={<ClasesDestacadas />} />
+        <Route path="/clases-destacadas" element={<EncuentraUnaClase data={classes} />} />
         <Route path="/ofrece-tus-servicios" element={<OfreceTusServicios />} />
         <Route path="/encuentra-una-clase" element={<EncuentraUnaClase data={classes} />} />
         <Route path="/soporte" element={<Soporte />} />

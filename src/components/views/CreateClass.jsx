@@ -42,7 +42,7 @@ export const CreateClass = ({ addClass }) => {
             name="category"
             value={formData.category}
             onChange={handleChange}
-            className="form-control"
+            className="form-control custom-select"
             required
           >
             <option value="">Selecciona una categoría</option>
