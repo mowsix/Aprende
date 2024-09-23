@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-export const CreateClass = ({ addClass }) => {
-  
+export const CreateClass = () => {
   const [formData, setFormData] = useState({
     category: '',
     title: '',
@@ -19,16 +18,36 @@ export const CreateClass = ({ addClass }) => {
   };
 
   // Manejar el envío del formulario
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Clase enviada:", formData); // Mostrar datos en la consola
-    addClass(formData);  // Añadir la nueva clase al estado global
-    setFormData({
-      category: '',
-      title: '',
-      price: '',
-      description: ''
-    });
+
+    try {
+      // Realizar la solicitud POST al servidor Flask
+      const response = await fetch('http://localhost:5000/api/clases', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Clase creada con éxito:", result);
+        
+        // Limpiar el formulario
+        setFormData({
+          category: '',
+          title: '',
+          price: '',
+          description: ''
+        });
+      } else {
+        console.error("Error al crear la clase");
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+    }
   };
 
   return (

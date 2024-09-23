@@ -1,22 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export const EncuentraUnaClase = (props) => {
+export const EncuentraUnaClase = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("Todas");
+  const [classes, setClasses] = useState([]); // Estado para almacenar las clases
 
-  console.log("Clases recibidas en EncuentraUnaClase:", props.data); // Verifica si las clases se pasan correctamente
+  // Realizar la solicitud GET al backend cuando el componente se monta
+  useEffect(() => {
+    const fetchClasses = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/clases');
+        if (response.ok) {
+          const result = await response.json();
+          setClasses(result.clases); // Asignar las clases obtenidas al estado
+          console.log("Clases obtenidas:", result.clases);
+        } else {
+          console.error("Error al obtener las clases");
+        }
+      } catch (error) {
+        console.error("Error en la solicitud:", error);
+      }
+    };
 
+    fetchClasses();
+  }, []);
 
+  // Manejar la búsqueda por término
   const handleSearch = (e) => {
-    console.log(e)
     setSearchTerm(e.target.value);
   };
 
+  // Manejar el cambio de filtro por categoría
   const handleFilterChange = (e) => {
     setFilterCategory(e.target.value);
   };
 
-  const filteredClasses = props.data
+  // Filtrar las clases por categoría y búsqueda
+  const filteredClasses = classes
     .filter((clase) => {
       return (
         (filterCategory === "Todas" || clase.category === filterCategory) &&
