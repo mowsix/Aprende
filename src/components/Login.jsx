@@ -8,14 +8,14 @@ const Login = () => {
   });
 
   const [registerData, setRegisterData] = useState({
-    nombre: "",
-    edad: "",
-    clases: "",
-    pais: "",
-    genero: "",
-    celular: "",
-    estudios: "primaria", // Valor por defecto
-    descripcion: "",
+    userFullName: "",
+    userAge: "",
+    userMainClass: "",
+    userCountry: "",
+    userEmail: "",
+    userPassword: "",
+    userEducation: "Primmaria",
+    userDescription: "",
   });
 
   // Manejadores de cambio para los formularios
@@ -35,10 +35,36 @@ const Login = () => {
     console.log("Datos de Login:", loginData);
   };
 
+  const handlePostRequest = async (user) => {
+    const url = "https://createuser-ckxakdbjmq-uc.a.run.app"; // Cambia por tu endpoint
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+  
+      if (response.ok) {
+        const result = await response.json(); // Si el servidor devuelve JSON
+        console.log("Response:", result);
+      } else {
+        console.error("HTTP Error:", response.status);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
+  };
+  
+
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
     // Aquí iría la lógica para procesar el registro
     console.log("Datos de Registro:", registerData);
+
+    handlePostRequest(registerData)
+
   };
 
   return (
@@ -50,9 +76,9 @@ const Login = () => {
           <div className="form-group">
             <label>Email:</label>
             <input
-              type="email"
-              name="email"
-              value={loginData.email}
+              type="text"
+              name="userEmail"
+              value={loginData.userEmail}
               onChange={handleLoginChange}
               required
             />
@@ -61,8 +87,8 @@ const Login = () => {
             <label>Contraseña:</label>
             <input
               type="password"
-              name="password"
-              value={loginData.password}
+              name="userPassword"
+              value={loginData.userPassword}
               onChange={handleLoginChange}
               required
             />
@@ -79,18 +105,18 @@ const Login = () => {
             <label>Nombre:</label>
             <input
               type="text"
-              name="nombre"
-              value={registerData.nombre}
+              name="userFullName"
+              value={registerData.userFullName}
               onChange={handleRegisterChange}
               required
             />
           </div>
           <div className="form-group">
-            <label>Edad:</label>
+            <label>Celular:</label>
             <input
               type="number"
-              name="edad"
-              value={registerData.edad}
+              name="userPhone"
+              value={registerData.userPhone}
               onChange={handleRegisterChange}
               required
             />
@@ -98,8 +124,8 @@ const Login = () => {
           <div className="form-group">
             <label>Clases en las que eres bueno:</label>
             <select
-              name="clases"
-              value={registerData.clases}
+              name="userMainClass"
+              value={registerData.userMainClass}
               onChange={handleRegisterChange}
               required
             >
@@ -116,28 +142,28 @@ const Login = () => {
             <label>País:</label>
             <input
               type="text"
-              name="pais"
-              value={registerData.pais}
+              name="userCountry"
+              value={registerData.userCountry}
               onChange={handleRegisterChange}
               required
             />
           </div>
           <div className="form-group">
-            <label>Género:</label>
+            <label>Email:</label>
             <input
               type="text"
-              name="genero"
-              value={registerData.genero}
+              name="userEmail"
+              value={registerData.userEmail}
               onChange={handleRegisterChange}
               required
             />
           </div>
           <div className="form-group">
-            <label>Celular:</label>
+            <label>Contraseña:</label>
             <input
-              type="tel"
-              name="celular"
-              value={registerData.celular}
+              type="password"
+              name="userPassword"
+              value={registerData.userPassword}
               onChange={handleRegisterChange}
               required
             />
@@ -145,8 +171,8 @@ const Login = () => {
           <div className="form-group">
             <label>Estudios:</label>
             <select
-              name="estudios"
-              value={registerData.estudios}
+              name="userEducation"
+              value={registerData.userEducation}
               onChange={handleRegisterChange}
               required
             >
@@ -161,8 +187,8 @@ const Login = () => {
           <div className="form-group">
             <label>Descripción:</label>
             <textarea
-              name="descripcion"
-              value={registerData.descripcion}
+              name="userDescription"
+              value={registerData.userDescription}
               onChange={handleRegisterChange}
               rows="4"
               required

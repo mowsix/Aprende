@@ -658,6 +658,54 @@ label {
     margin: 50px 0;
   }
 }
+/*MIS CLASES */
+/* src/components/views/MisClases.css */
+
+.mis-clases-container {
+  max-width: 600px;
+  margin: 90 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.mis-clases-title {
+  font-size: 2r;
+  font-weight: bold;
+  color: #62a1ea;
+  margin-bottom: 80px;
+}
+
+.class-section {
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+.class-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.class-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.no-classes {
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
 
 /* EncuentraUnaClase styles */
 /* Asegura que el contenedor principal de la vista tenga un margen superior adecuado */
@@ -900,6 +948,13 @@ body {
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+}
+
+.create-clases-title {
+  font-size: 2r;
+  font-weight: bold;
+  color: #62a1ea;
+  margin-bottom: 80px;
 }
 
 .create-class-form h2 {

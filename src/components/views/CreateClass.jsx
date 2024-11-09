@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 export const CreateClass = () => {
   const [formData, setFormData] = useState({
-    category: '',
-    title: '',
-    price: '',
-    description: ''
+    classCategory: '',
+    classTitle: '',
+    classPrice: '',
+    classDescription: ''
   });
+  const [successMessage, setSuccessMessage] = useState(''); // Estado para el mensaje de éxito
 
   // Manejar los cambios en el formulario
   const handleChange = (e) => {
@@ -20,46 +21,56 @@ export const CreateClass = () => {
   // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
+    await handlePostClassRequest(formData);
+  };
 
+  const handlePostClassRequest = async (lesson) => {
+    const url = "https://createclass-ckxakdbjmq-uc.a.run.app"; // Cambia por tu endpoint
     try {
-      // Realizar la solicitud POST al servidor Flask
-      const response = await fetch('http://localhost:5000/api/clases', {
-        method: 'POST',
+      const response = await fetch(url, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(lesson),
       });
-
+  
       if (response.ok) {
         const result = await response.json();
-        console.log("Clase creada con éxito:", result);
+        console.log("Response:", result);
         
-        // Limpiar el formulario
-        setFormData({
-          category: '',
-          title: '',
-          price: '',
-          description: ''
-        });
+        // Mostrar el mensaje de éxito temporalmente
+        setSuccessMessage("Clase creada con éxito");
+        setTimeout(() => {
+          setSuccessMessage(''); // Limpiar el mensaje después de 3 segundos
+        }, 3000);
+        
       } else {
-        console.error("Error al crear la clase");
+        console.error("HTTP Error:", response.status);
       }
     } catch (error) {
-      console.error("Error en la solicitud:", error);
+      console.error("Network error:", error);
     }
   };
 
   return (
-    <div className="container create-class-form">
-      <h2>Crear una nueva clase</h2>
+    <div className="mis-clases-container">
+      <h2 className="create-clases-title">CREA UNA CLASE</h2>
+
+      {/* Mostrar el mensaje de éxito si existe */}
+      {successMessage && (
+        <div className="alert alert-success" role="alert">
+          {successMessage}
+        </div>
+      )}
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="category">Categoría</label>
           <select
             id="category"
-            name="category"
-            value={formData.category}
+            name="classCategory"
+            value={formData.classCategory}
             onChange={handleChange}
             className="form-control custom-select"
             required
@@ -79,8 +90,8 @@ export const CreateClass = () => {
           <input
             type="text"
             id="title"
-            name="title"
-            value={formData.title}
+            name="classTitle"
+            value={formData.classTitle}
             onChange={handleChange}
             className="form-control"
             placeholder="Título de la clase"
@@ -93,8 +104,8 @@ export const CreateClass = () => {
           <input
             type="number"
             id="price"
-            name="price"
-            value={formData.price}
+            name="classPrice"
+            value={formData.classPrice}
             onChange={handleChange}
             className="form-control"
             placeholder="Precio de la clase"
@@ -106,8 +117,8 @@ export const CreateClass = () => {
           <label htmlFor="description">Descripción</label>
           <textarea
             id="description"
-            name="description"
-            value={formData.description}
+            name="classDescription"
+            value={formData.classDescription}
             onChange={handleChange}
             className="form-control"
             placeholder="Descripción de la clase"

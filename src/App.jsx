@@ -11,7 +11,7 @@ import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
 
-import { ClasesDestacadas } from "./components/views/ClasesDestacadas";
+import { MisClases } from "./components/views/MisClases";
 import { OfreceTusServicios } from "./components/views/OfreceTusServicios";
 import { EncuentraUnaClase } from "./components/views/EncuentraUnaClase";
 import { Soporte } from "./components/views/Soporte";
@@ -53,7 +53,7 @@ const App = () => {
           </>
         } />
         <Route path="/login" element={<Login />} />
-        <Route path="/clases-destacadas" element={<EncuentraUnaClase data={classes} />} />
+        <Route path="/mis-clases" element={<MisClases classes={classes} />} />
         <Route path="/ofrece-tus-servicios" element={<OfreceTusServicios />} />
         <Route path="/encuentra-una-clase" element={<EncuentraUnaClase data={classes} />} />
         <Route path="/soporte" element={<Soporte />} />

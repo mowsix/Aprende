@@ -9,11 +9,12 @@ export const EncuentraUnaClase = () => {
   useEffect(() => {
     const fetchClasses = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/clases');
+        const response = await fetch('https://getlessons-ckxakdbjmq-uc.a.run.app');
         if (response.ok) {
           const result = await response.json();
-          setClasses(result.clases); // Asignar las clases obtenidas al estado
-          console.log("Clases obtenidas:", result.clases);
+          console.log("OEOEOEOE:", result);
+          setClasses(result.data); // Asignar las clases obtenidas al estado
+          console.log("Clases obtenidas:", result.data);
         } else {
           console.error("Error al obtener las clases");
         }
@@ -39,8 +40,8 @@ export const EncuentraUnaClase = () => {
   const filteredClasses = classes
     .filter((clase) => {
       return (
-        (filterCategory === "Todas" || clase.category === filterCategory) &&
-        clase.title.toLowerCase().includes(searchTerm.toLowerCase())
+        (filterCategory === "Todas" || clase.classCategory === filterCategory) &&
+        clase.classTitle.toLowerCase().includes(searchTerm.toLowerCase())
       );
     });
 
@@ -70,9 +71,10 @@ export const EncuentraUnaClase = () => {
         {filteredClasses.length > 0 ? (
           filteredClasses.map((clase, index) => (
             <div key={index} className="class-card">
-              <h3>{clase.title}</h3>
-              <p>Categoría: {clase.category}</p>
-              <p>Precio: {clase.price}</p>
+              <h3>{clase.classTitle}</h3>
+              <p>Categoría: {clase.classCategory}</p>
+              <p>Precio: {clase.classPrice}</p>
+              <p>Profesor: {clase.classOwner}</p>
             </div>
           ))
         ) : (
