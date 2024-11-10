@@ -19,6 +19,8 @@ import { CreateClass } from "./components/views/CreateClass";
 import { ClaseDetalle } from "./components/views/ClaseDetalle";
 import Login from './components/Login';
 
+import { GlobalProvider } from './GlobalContext';
+
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
@@ -39,6 +41,7 @@ const App = () => {
   };
 
   return (
+    <GlobalProvider>
     <Router>
       <Navigation />
       <Routes>
@@ -61,6 +64,7 @@ const App = () => {
         <Route path="/detalle" element={<ClaseDetalle />} /> 
       </Routes>
     </Router>
+    </GlobalProvider>
   );
 };
 

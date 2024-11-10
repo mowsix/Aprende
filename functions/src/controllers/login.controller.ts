@@ -6,7 +6,7 @@ import {getUsersUseCase} from "../usecases/get-users.usecase";
 import {IUser} from "../interfaces/user.interface";
 
 
-export const loginController = async (req: Request): Promise<IResponse<number>> => {
+export const loginController = async (req: Request): Promise<IResponse<IUser | undefined>> => {
   const login:ILogin = req.body as ILogin;
   const users: IUser[]= await getUsersUseCase();
 
@@ -14,10 +14,10 @@ export const loginController = async (req: Request): Promise<IResponse<number>> 
 
   const message: string = user ? "Usuario encontrado." : "Usuario inexistente.";
 
-  const response: IResponse<number> = {
+  const response: IResponse<IUser | undefined> = {
     success: user!=undefined,
     message: message,
-    data: user?.userPhone ??0,
+    data: user,
   };
   return response;
 };

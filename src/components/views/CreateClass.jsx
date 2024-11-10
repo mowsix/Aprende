@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { GlobalContext } from "../../GlobalContext";
 
 export const CreateClass = () => {
+  const {user} = useContext(GlobalContext);
   const [formData, setFormData] = useState({
     //classId: new Date().now(),
     classCategory: '',
+    classOwner: user.userFullName,
     classTitle: '',
     classPrice: '',
     classDescription: ''
@@ -13,6 +16,7 @@ export const CreateClass = () => {
   // Manejar los cambios en el formulario
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({
       ...formData,
       [name]: value
@@ -22,11 +26,8 @@ export const CreateClass = () => {
   // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e);
-    const classId = new Date().now();
-    const x = {...e,classId}
-    console.log(x);
-    // await handlePostClassRequest(formData);
+    
+    await handlePostClassRequest(formData);
   };
 
   const handlePostClassRequest = async (lesson) => {

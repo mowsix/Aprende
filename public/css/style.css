@@ -1047,6 +1047,7 @@ body {
 }
 
 .clase-title {
+    color: white;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -1058,7 +1059,7 @@ body {
 }
 
 .inscribirse-button {
-  background-color: #4a90e2;
+  background-color: #181ba8;
   border: none;
   border-radius: 5px;
   color: white;
@@ -1072,3 +1073,14 @@ body {
   background-color: #357ab8;
 }
 
+.success-message {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.already-subscribed-message {
+  color: rgb(253, 253, 253);
+  font-weight: bold;
+  margin-top: 10px;
+}

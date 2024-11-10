@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { GlobalContext } from "../../GlobalContext";
+
 export const EncuentraUnaClase = () => {
+  const {user} = useContext(GlobalContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("Todas");
   const [classes, setClasses] = useState([]); // Estado para almacenar las clases
@@ -81,7 +84,9 @@ export const EncuentraUnaClase = () => {
     classCategory: clase.classCategory,
     classPrice: clase.classPrice,
     classOwner: clase.classOwner,
-    classDescription: clase.classDescription
+    classDescription: clase.classDescription,
+    classId: clase.classId
+    
   }}
   className="feature-link"
 >
