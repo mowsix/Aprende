@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 export const CreateClass = () => {
   const [formData, setFormData] = useState({
+    //classId: new Date().now(),
     classCategory: '',
     classTitle: '',
     classPrice: '',
@@ -21,7 +22,11 @@ export const CreateClass = () => {
   // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await handlePostClassRequest(formData);
+    console.log(e);
+    const classId = new Date().now();
+    const x = {...e,classId}
+    console.log(x);
+    // await handlePostClassRequest(formData);
   };
 
   const handlePostClassRequest = async (lesson) => {

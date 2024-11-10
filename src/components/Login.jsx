@@ -29,11 +29,7 @@ const Login = () => {
     setRegisterData({ ...registerData, [name]: value });
   };
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    // Aquí iría la lógica para procesar el login
-    console.log("Datos de Login:", loginData);
-  };
+
 
   const handlePostRequest = async (user) => {
     const url = "https://createuser-ckxakdbjmq-uc.a.run.app"; // Cambia por tu endpoint
@@ -65,6 +61,37 @@ const Login = () => {
 
     handlePostRequest(registerData)
 
+  };
+
+
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    // Aquí iría la lógica para procesar el login
+    console.log("Datos de Login:", loginData);
+    handleLogin(loginData)
+  };
+
+  const handleLogin = async (login) => {
+    const url = "https://loginuser-ckxakdbjmq-uc.a.run.app"; // Cambia por tu endpoint
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(login),
+      });
+  
+      if (response.ok) {
+        const result = await response.json(); // Si el servidor devuelve JSON
+        console.log("Response:", result);
+      } else {
+        console.error("HTTP Error:", response.status);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
   };
 
   return (

@@ -16,7 +16,7 @@ import { OfreceTusServicios } from "./components/views/OfreceTusServicios";
 import { EncuentraUnaClase } from "./components/views/EncuentraUnaClase";
 import { Soporte } from "./components/views/Soporte";
 import { CreateClass } from "./components/views/CreateClass";
-
+import { ClaseDetalle } from "./components/views/ClaseDetalle";
 import Login from './components/Login';
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -58,6 +58,7 @@ const App = () => {
         <Route path="/encuentra-una-clase" element={<EncuentraUnaClase data={classes} />} />
         <Route path="/soporte" element={<Soporte />} />
         <Route path="/crear-clase" element={<CreateClass addClass={addClass} />} />
+        <Route path="/detalle" element={<ClaseDetalle />} /> 
       </Routes>
     </Router>
   );
