@@ -14,7 +14,6 @@ const Login = () => {
 
   const [registerData, setRegisterData] = useState({
     userFullName: "",
-    userAge: "",
     userMainClass: "",
     userCountry: "",
     userEmail: "",
@@ -50,6 +49,10 @@ const Login = () => {
       if (response.ok) {
         const result = await response.json(); // Si el servidor devuelve JSON
         console.log("Response:", result);
+        if (result.success){
+          setUser(result.data);
+          navigate('/');  
+      }
       } else {
         console.error("HTTP Error:", response.status);
       }
@@ -72,14 +75,12 @@ const Login = () => {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para procesar el login
-    console.log("Datos de Login:", loginData);
     handleLogin(loginData)
 
   };
 
   const handleLogin = async (login) => {
-    const url = "https://loginuser-ckxakdbjmq-uc.a.run.app"; // Cambia por tu endpoint
+    const url = "https://loginuser-ckxakdbjmq-uc.a.run.app"; 
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -93,10 +94,8 @@ const Login = () => {
         console.log("Response:", result);
         if (result.success){
             setUser(result.data);
-            navigate('/');
-             // Aquí puedes reemplazar '123456789' con el valor que desees guardar
+            navigate('/');  
         }
-
       } else {
         console.error("HTTP Error:", response.status);
       }

@@ -11,7 +11,7 @@ export const getMyLessonsController = async (req: Request): Promise<IResponse<IC
   const myLessons:IClass[] = lessons.filter((item) => item.classOwner === user.userFullName );
   const response: IResponse<IClass[]> = {
     success: true,
-    message: "Information clients.",
+    message: "information lessons.",
     data: myLessons,
   };
   return response;

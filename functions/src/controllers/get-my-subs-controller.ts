@@ -9,7 +9,9 @@ import {ISubscription} from "../interfaces/subscription";
 export const getMySubsController = async (req: Request): Promise<IResponse<ISubscription[]>> => {
   const user:IUser = req.body as IUser;
   const subs: ISubscription[] = await getMySubsUseCase();
-  const mysubs:ISubscription[] = subs.filter((item) => item.subscriptionUser.userFullName === user.userFullName );
+  console.log(subs);
+  const mysubs:ISubscription[] = subs.filter((item) => item.subscriptionUser.userPhone === user.userPhone );
+  console.log(mysubs);
   const response: IResponse<ISubscription[]> = {
     success: true,
     message: "Information subs.",

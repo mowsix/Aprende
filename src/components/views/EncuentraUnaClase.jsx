@@ -98,8 +98,6 @@ export const EncuentraUnaClase = () => {
   </div>
 </Link>
 
-
-
           ))
         ) : (
           <p>No se encontraron clases.</p>

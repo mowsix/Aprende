@@ -20,6 +20,7 @@ export const ClaseDetalle = () => {
     const subscriptionData = {
       subscriptionId: classId,
       subscriptionUser: user,
+      subscriptionClass: location.state
     };
 
     const url = "https://subscribe-ckxakdbjmq-uc.a.run.app"; // Cambia por tu endpoint

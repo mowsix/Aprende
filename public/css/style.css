@@ -1089,52 +1089,43 @@ body {
 
 /*MIS CLASESS*/
 .mis-clases-container {
-  max-width: 800px;
-  margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.mis-clases-title {
-  font-size: 24px;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .clases-section {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.clases-section h3 {
-  font-size: 20px;
-  color: #333;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 5px;
+.class-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
 }
 
-.clases-list {
-  list-style-type: none;
-  padding: 0;
+.sub-list { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
 }
 
-.clase-item {
-  background-color: #fff;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.class-card {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px; /* Ajusta el tamaño de las tarjetas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.clase-item strong {
+.class-card h3 {
   font-size: 18px;
-  color: #007bff;
+  margin-bottom: 10px;
 }
 
-.clase-item p {
-  margin: 0;
-  color: #666;
+.class-card p {
+  font-size: 14px;
+  margin-bottom: 5px;
 }
+

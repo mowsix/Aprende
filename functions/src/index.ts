@@ -7,6 +7,7 @@ import {getLessonsController} from "./controllers/get-lessons-controller";
 import {loginController} from "./controllers/login.controller";
 import {subscriptionController} from "./controllers/subscription.controller";
 import {getMyLessonsController} from "./controllers/get-my-lessons-controller";
+import {getMySubsController} from "./controllers/get-my-subs-controller";
 initializeApp();
 
 export const CreateUser = onRequest(async (req, res) => {
@@ -146,7 +147,7 @@ export const GetMySubs = onRequest(async (req, res) => {
     return;
   }
   try {
-    const response = await getMyLessonsController(req);
+    const response = await getMySubsController(req);
     res.status(200).send(response);
   } catch (error) {
     const response: IResponse<null> = {

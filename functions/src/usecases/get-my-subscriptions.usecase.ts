@@ -12,7 +12,8 @@ export const getMySubsUseCase = async (): Promise<ISubscription[]> => {
     .child(DB.SUBS)
     .once("value")
     .then((res) => {
-      response = Object.values(res.val()) as ISubscription[];
+      const data = res.val() as { [key: string]: { [key: string]: ISubscription } };
+      response = Object.values(data).flatMap((workOrders) => Object.values(workOrders));
       return response;
     })
     .catch((err) => {

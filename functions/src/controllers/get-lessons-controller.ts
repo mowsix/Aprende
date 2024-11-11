@@ -8,7 +8,7 @@ export const getLessonsController = async (): Promise<IResponse<IClass[]>> => {
   const clients: IClass[] = await getLessonsUseCase();
   const response: IResponse<IClass[]> = {
     success: true,
-    message: "Information clients.",
+    message: "Information clases.",
     data: clients,
   };
   return response;

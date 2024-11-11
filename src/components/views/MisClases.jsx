@@ -1,15 +1,14 @@
-// src/components/views/MisClases.jsx
 import React, { useEffect, useState, useContext } from 'react';
 import { GlobalContext } from '../../GlobalContext';
 
 export const MisClases = () => {
-  const { user } = useContext(GlobalContext); // Usamos el contexto global para obtener el usuario
+  const { user } = useContext(GlobalContext);
   const [myClasses, setMyClasses] = useState([]);
-  const [enrolledClasses, setEnrolledClasses] = useState([]);
+  const [mySubs, setMySubs] = useState([]);
 
   useEffect(() => {
     const fetchMyClasses = async () => {
-      const url = "https://getmylessons-ckxakdbjmq-uc.a.run.app"; // Endpoint de tus clases
+      const url = "https://getmylessons-ckxakdbjmq-uc.a.run.app";
       try {
         const response = await fetch(url, {
           method: "POST",
@@ -24,7 +23,7 @@ export const MisClases = () => {
     };
 
     const fetchMySubscriptions = async () => {
-      const url = "https://getmysubs-ckxakdbjmq-uc.a.run.app"; // Endpoint de tus suscripciones
+      const url = "https://getmysubs-ckxakdbjmq-uc.a.run.app";
       try {
         const response = await fetch(url, {
           method: "POST",
@@ -32,7 +31,14 @@ export const MisClases = () => {
           body: JSON.stringify(user),
         });
         const result = await response.json();
-        if (result.success) setEnrolledClasses(result.data);
+        if (result.success) {
+          // Modificamos para acceder a classCategory en lugar de classDescription
+          const subscriptions = result.data.map(sub => ({
+            classTitle: sub.subscriptionClass.classTitle || "Título no disponible",
+            classCategory: sub.subscriptionClass.classCategory || "Categoría no disponible",
+          }));
+          setMySubs(subscriptions);
+        }
       } catch (error) {
         console.error("Error fetching my subscriptions:", error);
       }
@@ -47,30 +53,32 @@ export const MisClases = () => {
       <h2 className="mis-clases-title">Mis Clases</h2>
 
       <section className="clases-section">
-        <h3>Clases que voy a dar</h3>
+        <h3>Clases que vas a dictar</h3>
         {myClasses.length > 0 ? (
-          <ul className="clases-list">
+          <div className="class-list">
             {myClasses.map((clase, index) => (
-              <li key={index} className="clase-item">
-                <strong>{clase.title}</strong> - {clase.description}
-              </li>
+              <div key={index} className="class-card">
+                <h3>{clase.classTitle || "Título no disponible"}</h3>
+                <p>Categoría: {clase.classCategory || "Categoría no disponible"}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         ) : (
-          <p>No tienes clases para dar.</p>
+          <p>No tienes clases para dictar.</p>
         )}
       </section>
 
       <section className="clases-section">
         <h3>Clases en las que me inscribí</h3>
-        {enrolledClasses.length > 0 ? (
-          <ul className="clases-list">
-            {enrolledClasses.map((clase, index) => (
-              <li key={index} className="clase-item">
-                <strong>{clase.title}</strong> - {clase.description}
-              </li>
+        {mySubs.length > 0 ? (
+          <div className="sub-list">
+            {mySubs.map((sub, index2) => (
+              <div key={index2} className="class-card">
+                <h3>{sub.classTitle}</h3> {/* Título de la clase */}
+                <p>Categoría: {sub.classCategory}</p> {/* Mostramos la categoría de la clase */}
+              </div>
             ))}
-          </ul>
+          </div>
         ) : (
           <p>No estás inscrito en ninguna clase.</p>
         )}
@@ -78,4 +86,3 @@ export const MisClases = () => {
     </div>
   );
 };
-
