@@ -9,6 +9,7 @@ export const subscriptionUseCase = async (sub: ISubscription): Promise<boolean> 
     .ref()
     .child(DB.LEARN)
     .child(DB.SUBS)
+    .child(sub.subscriptionId.toString())
     .push(sub)
     .then(() => {
       return true;

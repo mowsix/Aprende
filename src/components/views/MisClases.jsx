@@ -1,29 +1,57 @@
 // src/components/views/MisClases.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { GlobalContext } from '../../GlobalContext';
 
-export const MisClases = ({ classes }) => {
+export const MisClases = () => {
+  const { user } = useContext(GlobalContext); // Usamos el contexto global para obtener el usuario
   const [myClasses, setMyClasses] = useState([]);
   const [enrolledClasses, setEnrolledClasses] = useState([]);
 
   useEffect(() => {
-    // Filtra las clases que vas a dar y las que estás inscrito.
-    const teachingClasses = classes.filter(cl => cl.type === 'teaching'); // Asume que las clases que vas a dar tienen type 'teaching'
-    const enrolledClasses = classes.filter(cl => cl.type === 'enrolled'); // Asume que las clases inscritas tienen type 'enrolled'
+    const fetchMyClasses = async () => {
+      const url = "https://getmylessons-ckxakdbjmq-uc.a.run.app"; // Endpoint de tus clases
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        });
+        const result = await response.json();
+        if (result.success) setMyClasses(result.data);
+      } catch (error) {
+        console.error("Error fetching my classes:", error);
+      }
+    };
 
-    setMyClasses(teachingClasses);
-    setEnrolledClasses(enrolledClasses);
-  }, [classes]);
+    const fetchMySubscriptions = async () => {
+      const url = "https://getmysubs-ckxakdbjmq-uc.a.run.app"; // Endpoint de tus suscripciones
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        });
+        const result = await response.json();
+        if (result.success) setEnrolledClasses(result.data);
+      } catch (error) {
+        console.error("Error fetching my subscriptions:", error);
+      }
+    };
+
+    fetchMyClasses();
+    fetchMySubscriptions();
+  }, [user]);
 
   return (
     <div className="mis-clases-container">
-      <h2 className="mis-clases-title">MIS CLASES</h2>
+      <h2 className="mis-clases-title">Mis Clases</h2>
 
-      <section>
+      <section className="clases-section">
         <h3>Clases que voy a dar</h3>
         {myClasses.length > 0 ? (
-          <ul>
+          <ul className="clases-list">
             {myClasses.map((clase, index) => (
-              <li key={index}>
+              <li key={index} className="clase-item">
                 <strong>{clase.title}</strong> - {clase.description}
               </li>
             ))}
@@ -33,12 +61,12 @@ export const MisClases = ({ classes }) => {
         )}
       </section>
 
-      <section>
+      <section className="clases-section">
         <h3>Clases en las que me inscribí</h3>
         {enrolledClasses.length > 0 ? (
-          <ul>
+          <ul className="clases-list">
             {enrolledClasses.map((clase, index) => (
-              <li key={index}>
+              <li key={index} className="clase-item">
                 <strong>{clase.title}</strong> - {clase.description}
               </li>
             ))}
@@ -50,3 +78,4 @@ export const MisClases = ({ classes }) => {
     </div>
   );
 };
+

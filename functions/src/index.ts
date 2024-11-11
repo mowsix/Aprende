@@ -6,6 +6,7 @@ import {createClassController} from "./controllers/create-class.controller.ts";
 import {getLessonsController} from "./controllers/get-lessons-controller";
 import {loginController} from "./controllers/login.controller";
 import {subscriptionController} from "./controllers/subscription.controller";
+import {getMyLessonsController} from "./controllers/get-my-lessons-controller";
 initializeApp();
 
 export const CreateUser = onRequest(async (req, res) => {
@@ -108,6 +109,49 @@ export const Subscribe = onRequest(async (req, res) => {
     const response: IResponse<null> = {
       success: false,
       message: "No se pudo suscribir",
+      data: null,
+    };
+    res.status(401).send(response);
+  }
+});
+
+
+export const GetMyLessons = onRequest(async (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Methods", "POST");
+  res.set("Access-Control-Allow-Headers", "*");
+  if (req.method === "OPTIONS") {
+    res.status(204).send("");
+    return;
+  }
+  try {
+    const response = await getMyLessonsController(req);
+    res.status(200).send(response);
+  } catch (error) {
+    const response: IResponse<null> = {
+      success: false,
+      message: "No se encontraron clases",
+      data: null,
+    };
+    res.status(401).send(response);
+  }
+});
+
+export const GetMySubs = onRequest(async (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Methods", "POST");
+  res.set("Access-Control-Allow-Headers", "*");
+  if (req.method === "OPTIONS") {
+    res.status(204).send("");
+    return;
+  }
+  try {
+    const response = await getMyLessonsController(req);
+    res.status(200).send(response);
+  } catch (error) {
+    const response: IResponse<null> = {
+      success: false,
+      message: "No se encontraron subs",
       data: null,
     };
     res.status(401).send(response);

@@ -1084,3 +1084,57 @@ body {
   font-weight: bold;
   margin-top: 10px;
 }
+
+
+
+/*MIS CLASESS*/
+.mis-clases-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mis-clases-title {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.clases-section {
+  margin-bottom: 30px;
+}
+
+.clases-section h3 {
+  font-size: 20px;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.clases-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.clase-item {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clase-item strong {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.clase-item p {
+  margin: 0;
+  color: #666;
+}
