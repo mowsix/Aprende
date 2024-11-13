@@ -1,12 +1,11 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../GlobalContext";
-import {useNavigate} from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(GlobalContext);
-  // Manejo del estado de los campos del formulario
+
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -18,11 +17,13 @@ const Login = () => {
     userCountry: "",
     userEmail: "",
     userPassword: "",
-    userEducation: "Primmaria",
+    userEducation: "Primaria",
     userDescription: "",
   });
 
-  // Manejadores de cambio para los formularios
+  const [notification, setNotification] = useState("");
+  const [isError, setIsError] = useState(false); // Nuevo estado para el tipo de mensaje
+
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
     setLoginData({ ...loginData, [name]: value });
@@ -33,10 +34,8 @@ const Login = () => {
     setRegisterData({ ...registerData, [name]: value });
   };
 
-
-
   const handlePostRequest = async (user) => {
-    const url = "https://createuser-ckxakdbjmq-uc.a.run.app"; // Cambia por tu endpoint
+    const url = "https://createuser-ckxakdbjmq-uc.a.run.app";
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -45,14 +44,13 @@ const Login = () => {
         },
         body: JSON.stringify(user),
       });
-  
+
       if (response.ok) {
-        const result = await response.json(); // Si el servidor devuelve JSON
-        console.log("Response:", result);
-        if (result.success){
-          setUser(result.data);
-          navigate('/');  
-      }
+        const result = await response.json();
+        if (result.success) {
+          setNotification("Registro exitoso. Por favor, inicia sesión con tus datos.");
+          setIsError(false); // Mensaje de éxito
+        }
       } else {
         console.error("HTTP Error:", response.status);
       }
@@ -60,27 +58,19 @@ const Login = () => {
       console.error("Network error:", error);
     }
   };
-  
 
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para procesar el registro
-    console.log("Datos de Registro:", registerData);
-
-    handlePostRequest(registerData)
-
+    handlePostRequest(registerData);
   };
-
-
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    handleLogin(loginData)
-
+    handleLogin(loginData);
   };
 
   const handleLogin = async (login) => {
-    const url = "https://loginuser-ckxakdbjmq-uc.a.run.app"; 
+    const url = "https://loginuser-ckxakdbjmq-uc.a.run.app";
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -90,11 +80,13 @@ const Login = () => {
         body: JSON.stringify(login),
       });
       if (response.ok) {
-        const result = await response.json(); // Si el servidor devuelve JSON
-        console.log("Response:", result);
-        if (result.success){
-            setUser(result.data);
-            navigate('/');  
+        const result = await response.json();
+        if (result.success) {
+          setUser(result.data);
+          navigate('/');
+        } else {
+          setNotification("Usuario no encontrado o datos incorrectos.");
+          setIsError(true); // Mensaje de error
         }
       } else {
         console.error("HTTP Error:", response.status);
@@ -105,7 +97,14 @@ const Login = () => {
   };
 
   return (
-    <div style={{ marginTop: "100px" }}> {/* Ajuste por la altura del navbar */}
+    <div style={{ marginTop: "100px" }}>
+      {/* Notificación */}
+      {notification && (
+        <div className={`notification ${isError ? "error" : "success"}`}>
+          <p>{notification}</p>
+        </div>
+      )}
+
       {/* Formulario de Login */}
       <div className="login-form">
         <h2>Iniciar Sesión</h2>

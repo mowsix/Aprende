@@ -7,7 +7,7 @@ export const Team = (props) => {
         <div className="col-md-8 col-md-offset-2 section-title">
           <h2>Conoce al equipo </h2>
           <p>
-            Una panda de mileuristas y mow que hizo todo
+            Un equipo de trabajo diverso con multiples aptitudes
           </p>
         </div>
         <div id="row">
