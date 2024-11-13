@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "../GlobalContext";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  // Manejo del estado de los campos del formulario
+  const navigate = useNavigate();
+  const { setUser } = useContext(GlobalContext);
+
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
 
   const [registerData, setRegisterData] = useState({
-    nombre: "",
-    edad: "",
-    clases: "",
-    pais: "",
-    genero: "",
-    celular: "",
-    estudios: "primaria", // Valor por defecto
-    descripcion: "",
+    userFullName: "",
+    userMainClass: "",
+    userCountry: "",
+    userEmail: "",
+    userPassword: "",
+    userEducation: "Primaria",
+    userDescription: "",
   });
 
-  // Manejadores de cambio para los formularios
+  const [notification, setNotification] = useState("");
+  const [isError, setIsError] = useState(false); // Nuevo estado para el tipo de mensaje
+
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
     setLoginData({ ...loginData, [name]: value });
@@ -29,20 +34,77 @@ const Login = () => {
     setRegisterData({ ...registerData, [name]: value });
   };
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    // Aquí iría la lógica para procesar el login
-    console.log("Datos de Login:", loginData);
+  const handlePostRequest = async (user) => {
+    const url = "https://createuser-ckxakdbjmq-uc.a.run.app";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          setNotification("Registro exitoso. Por favor, inicia sesión con tus datos.");
+          setIsError(false); // Mensaje de éxito
+        }
+      } else {
+        console.error("HTTP Error:", response.status);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
   };
 
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para procesar el registro
-    console.log("Datos de Registro:", registerData);
+    handlePostRequest(registerData);
+  };
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    handleLogin(loginData);
+  };
+
+  const handleLogin = async (login) => {
+    const url = "https://loginuser-ckxakdbjmq-uc.a.run.app";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(login),
+      });
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          setUser(result.data);
+          navigate('/');
+        } else {
+          setNotification("Usuario no encontrado o datos incorrectos.");
+          setIsError(true); // Mensaje de error
+        }
+      } else {
+        console.error("HTTP Error:", response.status);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
   };
 
   return (
-    <div style={{ marginTop: "100px" }}> {/* Ajuste por la altura del navbar */}
+    <div style={{ marginTop: "100px" }}>
+      {/* Notificación */}
+      {notification && (
+        <div className={`notification ${isError ? "error" : "success"}`}>
+          <p>{notification}</p>
+        </div>
+      )}
+
       {/* Formulario de Login */}
       <div className="login-form">
         <h2>Iniciar Sesión</h2>
@@ -50,9 +112,9 @@ const Login = () => {
           <div className="form-group">
             <label>Email:</label>
             <input
-              type="email"
-              name="email"
-              value={loginData.email}
+              type="text"
+              name="userEmail"
+              value={loginData.userEmail}
               onChange={handleLoginChange}
               required
             />
@@ -61,8 +123,8 @@ const Login = () => {
             <label>Contraseña:</label>
             <input
               type="password"
-              name="password"
-              value={loginData.password}
+              name="userPassword"
+              value={loginData.userPassword}
               onChange={handleLoginChange}
               required
             />
@@ -79,18 +141,18 @@ const Login = () => {
             <label>Nombre:</label>
             <input
               type="text"
-              name="nombre"
-              value={registerData.nombre}
+              name="userFullName"
+              value={registerData.userFullName}
               onChange={handleRegisterChange}
               required
             />
           </div>
           <div className="form-group">
-            <label>Edad:</label>
+            <label>Celular:</label>
             <input
               type="number"
-              name="edad"
-              value={registerData.edad}
+              name="userPhone"
+              value={registerData.userPhone}
               onChange={handleRegisterChange}
               required
             />
@@ -98,8 +160,8 @@ const Login = () => {
           <div className="form-group">
             <label>Clases en las que eres bueno:</label>
             <select
-              name="clases"
-              value={registerData.clases}
+              name="userMainClass"
+              value={registerData.userMainClass}
               onChange={handleRegisterChange}
               required
             >
@@ -116,28 +178,28 @@ const Login = () => {
             <label>País:</label>
             <input
               type="text"
-              name="pais"
-              value={registerData.pais}
+              name="userCountry"
+              value={registerData.userCountry}
               onChange={handleRegisterChange}
               required
             />
           </div>
           <div className="form-group">
-            <label>Género:</label>
+            <label>Email:</label>
             <input
               type="text"
-              name="genero"
-              value={registerData.genero}
+              name="userEmail"
+              value={registerData.userEmail}
               onChange={handleRegisterChange}
               required
             />
           </div>
           <div className="form-group">
-            <label>Celular:</label>
+            <label>Contraseña:</label>
             <input
-              type="tel"
-              name="celular"
-              value={registerData.celular}
+              type="password"
+              name="userPassword"
+              value={registerData.userPassword}
               onChange={handleRegisterChange}
               required
             />
@@ -145,8 +207,8 @@ const Login = () => {
           <div className="form-group">
             <label>Estudios:</label>
             <select
-              name="estudios"
-              value={registerData.estudios}
+              name="userEducation"
+              value={registerData.userEducation}
               onChange={handleRegisterChange}
               required
             >
@@ -161,8 +223,8 @@ const Login = () => {
           <div className="form-group">
             <label>Descripción:</label>
             <textarea
-              name="descripcion"
-              value={registerData.descripcion}
+              name="userDescription"
+              value={registerData.userDescription}
               onChange={handleRegisterChange}
               rows="4"
               required

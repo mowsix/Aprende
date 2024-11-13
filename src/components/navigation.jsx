@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   const navigate = useNavigate();
@@ -65,9 +66,12 @@ export const Navigation = () => {
                 </a>
               </li>
               <li>
-                <a id="login-button" href="/login" className="page-scroll">
-                  LOGIN
-                </a>
+                <Link
+                    to="login"
+                    className="feature-link"
+                  >
+                   LOGIN
+                  </Link>
               </li>
               <li>
                 <div id="google_translate_element"></div>

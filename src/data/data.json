@@ -20,60 +20,65 @@
     {
       "icon": "/img/matematicas.png",
       "name": "Matematicas",
-      "text": "Texto de matemáticas",
+      "text": "clases de geometria, calculo y mucha matematica",
       "link": "/encuentra-una-clase/matematicas"
     },
     {
       "icon": "/img/programacion.png",
       "name": "Programacion",
-      "text": "Texto de programación",
+      "text": "front, back, bases de datos, IA y mucho mas",
       "link": "/encuentra-una-clase/programacion"
     },
     {
       "icon": "/img/quimica.png",
       "name": "Quimica",
-      "text": "Texto de química",
+      "text": "Organica e inorganica, particulas, enlaces, polaridad, covalencia y mucha quimica",
       "link": "/encuentra-una-clase/quimica"
     },
     {
       "icon": "/img/idiomas.png",
       "name": "Idiomas",
-      "text": "Texto de idiomas",
+      "text": "Aprende el idioma que quieras con nativos y extranjeros",
       "link": "/encuentra-una-clase/idiomas"
     },
     {
       "icon": "/img/fisica.png",
       "name": "Fisica",
-      "text": "Texto de física",
+      "text": "mecanica, electricidad, ondas, cuantica y cuanta fisica quieras",
       "link": "/encuentra-una-clase/fisica"
     },
     {
       "icon": "/img/dibujo.png",
       "name": "Dibujo",
-      "text": "Texto de dibujo",
+      "text": "bocetos, sketches, herramientas, dibujo tecnico, impresionismo, digitalizacion y mas",
       "link": "/encuentra-una-clase/dibujo"
     }
   ],
   "Team": [
     {
       "img": "img/team/01.jpg",
-      "name": "Nati natasha",
-      "job": "primer semestre"
+      "name": "Natalia Urrego",
+      "job": "Scrum Master & Frontend developer"
     },
     {
       "img": "img/team/02.jpg",
-      "name": "Tyler Duque",
-      "job": "No se quien es"
+      "name": "Sebastian Forero",
+      "job": "Marketing, Backend developer & RPA administrator"
     },
     {
       "img": "img/team/03.jpg",
-      "name": "Hernan Achito",
-      "job": "Ceo"
+      "name": "Santiago Gallego",
+      "job": "CEO, Backend developer & DBA "
     },
     {
       "img": "img/team/04.jpg",
-      "name": "Jimbo",
-      "job": "se busca"
+      "name": "Sebastian Villa",
+      "job": "Frontend developer & Social Media"
+    },
+    {
+      "img": "img/team/05.jpg",
+      "name": "Michael Serna",
+      "job": "Frontend developer & Low code admin"
     }
   ],
   "Contact": {
@@ -87,8 +92,8 @@
   "Features": [
     {
       "icon": "fa fa-magic",
-      "title": "Clases Destacadas",
-      "text": "La Clases mas populares en la plataforma, cada semana se actualizara el topic"
+      "title": "Mis Clases",
+      "text": "Encuentra cada una de las clases que tienes por enseñar y/o las lecciones que tienes por aprender"
     },
     {
       "icon": "fa fa-bullhorn",

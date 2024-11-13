@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { GlobalContext } from "../../GlobalContext";
 
 export const EncuentraUnaClase = () => {
+  const {user} = useContext(GlobalContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("Todas");
   const [classes, setClasses] = useState([]); // Estado para almacenar las clases
@@ -9,11 +12,10 @@ export const EncuentraUnaClase = () => {
   useEffect(() => {
     const fetchClasses = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/clases');
+        const response = await fetch('https://getlessons-ckxakdbjmq-uc.a.run.app');
         if (response.ok) {
           const result = await response.json();
-          setClasses(result.clases); // Asignar las clases obtenidas al estado
-          console.log("Clases obtenidas:", result.clases);
+          setClasses(result.data); // Asignar las clases obtenidas al estado
         } else {
           console.error("Error al obtener las clases");
         }
@@ -24,7 +26,7 @@ export const EncuentraUnaClase = () => {
 
     fetchClasses();
   }, []);
-
+  // <div key={index} className="class-card" onClick={() => openClassDetails(clase)} style={{ cursor: "pointer" }}>
   // Manejar la búsqueda por término
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -39,10 +41,16 @@ export const EncuentraUnaClase = () => {
   const filteredClasses = classes
     .filter((clase) => {
       return (
-        (filterCategory === "Todas" || clase.category === filterCategory) &&
-        clase.title.toLowerCase().includes(searchTerm.toLowerCase())
+        (filterCategory === "Todas" || clase.classCategory === filterCategory) &&
+        clase.classTitle.toLowerCase().includes(searchTerm.toLowerCase())
       );
     });
+
+  // Función para abrir una nueva pestaña con los detalles de la clase
+  const openClassDetails = (clase) => {
+    const detailsUrl = `/class-details?title=${encodeURIComponent(clase.classTitle)}&category=${encodeURIComponent(clase.classCategory)}&price=${encodeURIComponent(clase.classPrice)}&owner=${encodeURIComponent(clase.classOwner)}&description=${encodeURIComponent(clase.classDescription)}`;
+    window.open(detailsUrl, '_blank'); // Abrir en una nueva pestaña
+  };
 
   return (
     <div className="encuentra-clase-container">
@@ -69,11 +77,27 @@ export const EncuentraUnaClase = () => {
       <div className="class-list">
         {filteredClasses.length > 0 ? (
           filteredClasses.map((clase, index) => (
-            <div key={index} className="class-card">
-              <h3>{clase.title}</h3>
-              <p>Categoría: {clase.category}</p>
-              <p>Precio: {clase.price}</p>
-            </div>
+<Link
+  to="/detalle"
+  state={{
+    classTitle: clase.classTitle,
+    classCategory: clase.classCategory,
+    classPrice: clase.classPrice,
+    classOwner: clase.classOwner,
+    classDescription: clase.classDescription,
+    classId: clase.classId
+    
+  }}
+  className="feature-link"
+>
+  <div className="class-card">
+    <h3>{clase.classTitle}</h3>
+    <p>Categoría: {clase.classCategory}</p>
+    <p>Precio: {clase.classPrice}</p>
+    <p>Profesor: {clase.classOwner}</p>
+  </div>
+</Link>
+
           ))
         ) : (
           <p>No se encontraron clases.</p>
